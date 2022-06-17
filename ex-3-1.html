@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h2>연습문제 3-1</h2>
+    <h4>"입력한 수들의 갯수와 합"</h4>
+
+    <script>
+      let num;
+      let count = 0;
+      let answer = 0;
+      while (num !== 0) {
+        num = Number(prompt(`숫자를 입력해주세요! \n\(종료 : 0\)`));
+        if (num === 0) {
+          break;
+        }
+        count++;
+        answer += num;
+      }
+      console.log(`입력 개수 : ${count}`);
+      console.log(`입력의 합 : ${answer}`);
+      document.write(`입력 개수 : ${count}<br>`);
+      document.write(`입력의 합 : ${answer}`);
+    </script>
+  </body>
+</html>
