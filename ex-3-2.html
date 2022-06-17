@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      let pathName = window.location.pathname;
+      let fileName = pathName.slice(4, pathName.length - 5);
+      document.write(`<h2> 연습문제 ${fileName} </h2>`);
+    </script>
+    <h4>"입력한 수들의 갯수와 합"</h4>
+
+    <script>
+      let answer = 0;
+      for (let i = 2; i < 101; i += 2) {
+        answer += i;
+      }
+      console.log(`1 ~ 100 짝수의 합 : ${answer}`);
+      document.write(`1 ~ 100 짝수의 합 : ${answer}`);
+    </script>
+  </body>
+</html>
