@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h2>연습문제 2-2</h2>
+    <h4>"대문자? 소문자?"</h4>
+
+    <script>
+      let str = prompt('영어문장을 입력해주세요.');
+      let upperStr = str.toUpperCase();
+      let lowerStr = str.toLowerCase();
+
+      if (str === upperStr) {
+        console.log(`대문자!`);
+        document.write(`<h1>대문자 문장이네요!</h1>'`);
+      } else if (str === lowerStr) {
+        console.log(`소문자!`);
+        document.write(`<h1>소문자 문장이네요!</h1>'`);
+      } else {
+        console.log(`보통!`);
+        document.write(`<h1>보통 문장이네요!</h1>'`);
+      }
+    </script>
+  </body>
+</html>
