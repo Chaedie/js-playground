@@ -16,8 +16,8 @@
     <script>
       let num = Number(prompt('숫자를 입력해주세요!'));
       let isPrimeNumber = isPrime(num);
-      console.log(`소수인가요? : ${isPrimeNumber ? '소수입니다.' : '아닙니다.'}`);
-      document.write(`소수인가요?  : ${isPrimeNumber ? '소수입니다.' : '아닙니다.'}`);
+      console.log(`${num}가 소수인가요? => ${isPrimeNumber ? '소수입니다.' : '아닙니다.'}`);
+      document.write(`${num}가 소수인가요? => ${isPrimeNumber ? '소수입니다.' : '아닙니다.'}`);
 
       function isPrime(num) {
         if (num === 1) {
