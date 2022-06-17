@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      document.write(`<h2> 구구단 구현 </h2>`);
+    </script>
+    <h4>"구구단 원하는 단수 출력 (콘솔, 웹 출력)"</h4>
+
+    <script>
+      let num = Number(prompt('단수를 입력해주세요'));
+      document.write(`<h3>${num}단</h3>`);
+      for (let i = 1; i < 10; i++) {
+        let result = num * i;
+        console.log(`${num} x ${i} = ${result}`);
+        document.write(`${num} x ${i} = ${result}<br>`);
+      }
+      document.write(`<br>`);
+    </script>
+  </body>
+</html>
