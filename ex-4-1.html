@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      let pathName = window.location.pathname;
+      let fileName = pathName.slice(4, pathName.length - 5);
+      document.write(`<h2> 연습문제 ${fileName} </h2>`);
+    </script>
+    <h4>"함수 구현 연습"</h4>
+
+    <script>
+      function repeatText(text, num) {
+        for (let i = 0; i < num; i++) {
+          console.log(`${i} : ${text}`);
+        }
+      }
+
+      repeatText('Hello', 5);
+    </script>
+  </body>
+</html>
