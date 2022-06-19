@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>html 연습</h1>
+    <div id="test">버튼 예제</div>
+      input과 button <br />
+      <input type="text" name="" id="input1" /><br />
+      <button onclick="read()" class="btn1">확인</button>
+    </div>
+
+    <script src="add_button.js"></script>
+    <script>
+      let read = function () {
+        let input = document.getElementById('input1');
+        console.log(input.value);
+      };
+      let btn2 = document.createElement('button');
+      btn2.innerHTML = 'button2'
+      btn2.onclick = read;
+      let test = document.getElementById('test');
+      // test.appendChild(btn2)
+      // test.append(btn2);
+    </script>
+  </body>
+</html>
