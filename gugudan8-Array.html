@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h4>"배열로 구구단 구현"</h4>
+    <script>
+      for (let num = 2; num <= 9; num++) {
+        gugudan(num);
+      }
+
+      function gugudan(num) {
+        let results = [];
+        let length = 9;
+
+        for (let j = 1; j <= length; j++) {
+          results.push(num * j);
+        }
+
+        for (let i = 0; i < length; i++) {
+          console.log(results[i]);
+          document.write(`${num} x ${i + 1} = ${results[i]}<br>`);
+        }
+        console.log(' ');
+        document.write(`<br>`);
+      }
+    </script>
+  </body>
+</html>
