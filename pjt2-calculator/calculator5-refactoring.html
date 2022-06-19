@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>사칙연산 - While문 활용</h1>
+
+    <script>
+      let sum = function (a, b) {
+        return a + b;
+      };
+
+      let minus = function (a, b) {
+        return a - b;
+      };
+
+      let multiply = function (a, b) {
+        return a * b;
+      };
+
+      let divide = function (a, b) {
+        return a / b;
+      };
+
+      let printResult = function (input, a) {
+        return `${input} = ${a} `;
+      };
+
+      let getInputValue = function () {
+        let input = prompt(`식을 입력해주세요\n(예시: 4 + 2 * 3) \n(종료 : q)`);
+        return input;
+      };
+
+      let calculate = function (expressions) {
+        let a = parseInt(expressions[0]);
+        for (let i = 2; i < expressions.length; i += 2) {
+          let operator = expressions[i - 1];
+          let b = parseInt(expressions[i]);
+          switch (operator) {
+            case '+':
+              a = sum(a, b);
+              break;
+            case '-':
+              a = minus(a, b);
+              break;
+            case '*':
+              a = multiply(a, b);
+              break;
+            case '/':
+              a = divide(a, b);
+              break;
+
+            default:
+              console.log('올바른 식을 입력해주세요!');
+              document.write(`올바른 식을 입력해주세요!`);
+              break;
+          }
+        }
+
+        return a;
+      };
+
+      function main() {
+        let index = 1;
+        while (true) {
+          let input = getInputValue();
+          let expressions = input.split(' ');
+
+          if (input === 'q') {
+            break;
+          }
+
+          let result = calculate(expressions);
+
+          console.log(`${index}번 식 : ${printResult(input, result)}`);
+          document.write(`${index}번 식 : ${printResult(input, result)}<br>`);
+          index++;
+        }
+      }
+
+      main();
+    </script>
+  </body>
+</html>
