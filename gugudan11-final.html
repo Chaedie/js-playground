@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>구구단 마지막!</h2>
+    <script>
+      gugudan = {};
+      gugudan.result = [];
+      gugudan.n = 0;
+      gugudan.m = 0;
+      gugudan.calculate = function (n, m) {
+        this.n = n;
+        this.m = m;
+
+        for (let i = 1; i < 9; i++) {
+          for (let j = 0; j < 9; j++) {
+            this.result.push((i + 1) * (j + 1));
+            if (i + 1 === n && j + 1 === m) {
+              return;
+            }
+          }
+        }
+      };
+      gugudan.print = function () {
+        document.write(`<h3>${this.n} x ${this.m}단 구현!</h3>`);
+        for (let i = 1; i < 9; i++) {
+          for (let j = 0; j < 9; j++) {
+            console.log(`${i + 1} x ${j + 1} = ${this.result[(i - 1) * 9 + j]}`);
+            document.write(`${i + 1} x ${j + 1} = ${this.result[(i - 1) * 9 + j]}<br>`);
+            if (i + 1 === this.n && j + 1 === this.m) {
+              return;
+            }
+          }
+
+          console.log(' ');
+          document.write(`<br>`);
+        }
+      };
+
+      function main() {
+        let input = prompt('숫자를 입력해주세요.\n(예시 : 8,7 => 8 x 7까지 출력)');
+        let inputs = input.split(',');
+        let n = parseInt(inputs[0]);
+        let m = parseInt(inputs[1]);
+
+        gugudan.calculate(n, m);
+        gugudan.print();
+      }
+
+      main();
+    </script>
+  </body>
+</html>
