@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>사칙연산 - While문 활용</h1>
+
+    <script>
+      let sum = function (a, b) {
+        return a + b;
+      };
+
+      let minus = function (a, b) {
+        return a - b;
+      };
+
+      let multiply = function (a, b) {
+        return a * b;
+      };
+
+      let divide = function (a, b) {
+        return a / b;
+      };
+
+      let printSum = function (a, b) {
+        console.log(sum(a, b));
+        document.write(`sum : ${sum(a, b)}<br>`);
+      };
+
+      let printMinus = function (a, b) {
+        console.log(minus(a, b));
+        document.write(`minus : ${minus(a, b)}<br>`);
+      };
+
+      let printMultiply = function (a, b) {
+        console.log(multiply(a, b));
+        document.write(`multiply : ${multiply(a, b)}<br>`);
+      };
+
+      let printDivide = function (a, b) {
+        console.log(divide(a, b));
+        document.write(`divide : ${divide(a, b)}<br>`);
+      };
+
+      let printResult = function (input, a) {
+        console.log(`${input} = ${a} `);
+        document.write(`${input} = ${a} <br>`);
+      };
+
+      function main() {
+        while (true) {
+          let input = prompt(`식을 입력해주세요\n(예시: 4 + 2 * 3) \n(종료 : q)`);
+          let inputs = input.split(' ');
+          console.log(inputs);
+
+          if (input === 'q') {
+            break;
+          }
+          let a = parseInt(inputs[0]);
+          for (let i = 2; i < inputs.length; i += 2) {
+            let operator = inputs[i - 1];
+            let b = parseInt(inputs[i]);
+            switch (operator) {
+              case '+':
+                a = sum(a, b);
+                break;
+              case '-':
+                a = minus(a, b);
+                break;
+              case '*':
+                a = multiply(a, b);
+                break;
+              case '/':
+                a = divide(a, b);
+                break;
+
+              default:
+                console.log('올바른 식을 입력해주세요!');
+                document.write(`올바른 식을 입력해주세요!`);
+                break;
+            }
+          }
+          printResult(input, a);
+        }
+      }
+      main();
+    </script>
+  </body>
+</html>
