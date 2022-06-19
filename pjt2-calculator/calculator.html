@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let sum = function (a, b) {
+        return a + b;
+      };
+
+      let minus = function (a, b) {
+        return a - b;
+      };
+
+      let multiply = function (a, b) {
+        return a * b;
+      };
+
+      let divide = function (a, b) {
+        return a / b;
+      };
+
+      function main() {
+        let input = prompt('숫자 두개를 입력해주세요\n(예시 : a,b)');
+        let inputs = input.split(',');
+        let a = parseInt(inputs[0]);
+        let b = parseInt(inputs[1]);
+
+        console.log(sum(a, b));
+        console.log(minus(a, b));
+        console.log(multiply(a, b));
+        console.log(divide(a, b));
+      }
+
+      main();
+    </script>
+  </body>
+</html>
