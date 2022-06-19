@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      let pathName = window.location.pathname;
+      let fileName = pathName.slice(4, pathName.length - 5);
+      document.write(`<h2> 연습문제 ${fileName} </h2>`);
+    </script>
+    <h4>"객체 2"</h4>
+
+    <script>
+      let Human = function (name, hp, pow) {
+        this.name = name;
+        this.hp = hp;
+        this.pow = pow;
+        this.eat = function (food) {
+          console.log(`${food}를 먹었습니다.`);
+          console.log(`hp가 ${food.energy}만큼 상승했습니다.`);
+          console.log(this.hp + '=>');
+          this.hp += food.energy;
+          console.log(this.hp);
+        };
+      };
+      let Food = function (name, energy) {
+        this.name = name;
+        this.energy = energy;
+      };
+    </script>
+  </body>
+</html>
