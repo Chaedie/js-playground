@@ -6,37 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <h4>"배열로 구구단 구현"</h4>
+    <h4>"객체로 구구단 구현"</h4>
     <script>
-      class Gugudan {
-        calculate(n) {
-          let results = [];
+      gugudan = {};
+      gugudan.results = [];
+      gugudan.current = -1;
+      gugudan.calculate = function (n) {
+        this.current = n;
+        for (let i = 0; i < 9; i++) {
+          this.results[i] = (i + 1) * n;
+        }
+      };
 
-          for (let j = 1; j <= 9; j++) {
-            results[j] = j * n;
-          }
-
-          return results;
+      gugudan.print = function () {
+        for (let i = 0; i < 9; i++) {
+          console.log(this.results[i]);
+          document.write(`${this.current} x ${i + 1} = ${this.results[i]}<br>`);
         }
 
-        printResults(results) {
-          let n = results[1];
-          for (let i = 1; i <= 9; i++) {
-            console.log(results[i]);
-            document.write(`${n} x ${i} = ${results[i]}<br>`);
-          }
-
-          console.log(' ');
-          document.write(`<br>`);
-        }
-      }
+        console.log(' ');
+        document.write(`<br>`);
+      };
 
       function main() {
-        let gugudan = new Gugudan();
-
         for (let n = 2; n <= 9; n++) {
-          let results = gugudan.calculate(n);
-          gugudan.printResults(results);
+          gugudan.calculate(n);
+          gugudan.print();
         }
       }
 
