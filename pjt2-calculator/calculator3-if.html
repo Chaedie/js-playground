@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>사칙연산 - If문 활용</h1>
+    <form action="#" onsubmit="main()">
+      숫자 A를 입력해주세요! :
+      <input type="text" id="inputA" value="1" /><br />
+      숫자 B를 입력해주세요! :
+      <input type="text" id="inputB" value="1" /><br />
+      연산자를 입력해주세요! :
+      <input type="text" id="inputFunction" value="+" /><br />
+      <button type="submit">확인</button><br />
+    </form>
+    <script>
+      let sum = function (a, b) {
+        return a + b;
+      };
+
+      let minus = function (a, b) {
+        return a - b;
+      };
+
+      let multiply = function (a, b) {
+        return a * b;
+      };
+
+      let divide = function (a, b) {
+        return a / b;
+      };
+
+      let printSum = function (a, b) {
+        console.log(sum(a, b));
+        document.write(`sum : ${sum(a, b)}<br>`);
+      };
+
+      let printMinus = function (a, b) {
+        console.log(minus(a, b));
+        document.write(`minus : ${minus(a, b)}<br>`);
+      };
+
+      let printMultiply = function (a, b) {
+        console.log(multiply(a, b));
+        document.write(`multiply : ${multiply(a, b)}<br>`);
+      };
+
+      let printDivide = function (a, b) {
+        console.log(divide(a, b));
+        document.write(`divide : ${divide(a, b)}<br>`);
+      };
+
+      function main() {
+        let inputA = document.getElementById('inputA').value;
+        let inputB = document.getElementById('inputB').value;
+        let operator = document.getElementById('inputFunction').value;
+
+        let a = parseInt(inputA);
+        let b = parseInt(inputB);
+
+        switch (operator) {
+          case '+':
+            printSum(a, b);
+            break;
+          case '-':
+            printMinus(a, b);
+            break;
+          case '*':
+            printMultiply(a, b);
+            break;
+          case '/':
+            printDivide(a, b);
+            break;
+          default:
+            console.log('올바른 연산자를 입력해주세요!');
+            document.write(`올바른 연산자를 입력해주세요!`);
+
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
