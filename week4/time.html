@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let fibo = function (n) {
+        if (n === 0) {
+          return 0;
+        }
+        if (n === 1) {
+          return 1;
+        }
+        return fibo(n - 1) + fibo(n - 2);
+      };
+
+      // 2. 다이나믹 프로그래밍(메모이제이션)으로 구현할 수 있다.
+      let arr = [0, 1];
+
+      let fibo_d = function (n) {
+        if (arr[n] === undefined) {
+          arr[n] = fibo_d(n - 1) + fibo_d(n - 2);
+        }
+        return arr[n];
+      };
+
+      let t1 = Date.now();
+      let result = fibo(42);
+      let t2 = Date.now();
+      console.log(`Fibo1 : ${result}, ${t2 - t1}ms`);
+
+      t1 = Date.now();
+      result = fibo_d(42);
+      t2 = Date.now();
+      console.log(`Fibo2 : ${result}, ${t2 - t1}ms`);
+    </script>
+  </body>
+</html>
