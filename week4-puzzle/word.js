@@ -1,25 +1,39 @@
-let printPuzzle = function (str) {
-  let getDiv = document.getElementById('puzzle');
+let word1 = document.getElementById('word1').innerText;
 
-  for (let i = 0; i < str.length; i++) {
-    let createButton = document.createElement('button');
-    createButton.innerText = str[i];
-    getDiv.appendChild(createButton);
+game = {};
+game.word = word1.split('');
+game.btns = [];
+
+let puzzle = document.getElementById('puzzle');
+
+for (let i = 0; i < game.word.length; i++) {
+  let btn = document.createElement('button');
+  btn.innerText = game.word[i];
+  puzzle.appendChild(btn);
+  game.btns.push(btn);
+}
+
+game.copyBtnText = function () {
+  for (let i = 0; i < this.word.length; i++) {
+    this.btns[i].innerText = this.word[i];
   }
 };
 
-let swap = function () {
-  console.log('뒤집기');
+let rightShift = function (event) {
+  let char = game.word.pop();
+  game.word.unshift(char);
+  game.copyBtnText();
 };
 
-let shift = function () {
-  let lastBtn = document.getElementById;
-  console.log('밀어내기');
+let leftShift = function (event) {
+  let char = game.word.shift();
+  game.word.push(char);
+  game.copyBtnText();
 };
 
-function main() {
-  let str = 'HELLO';
-  printPuzzle(str);
-}
-
-main();
+console.log(game.btns);
+console.log(game.btns[0].innerText);
+console.log(game.btns[1].innerText);
+console.log(game.btns[2].innerText);
+console.log(game.btns[3].innerText);
+console.log(game.btns[4].innerText);
