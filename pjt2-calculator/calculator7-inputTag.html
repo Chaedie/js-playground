@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>사칙연산 - inputTag 활용</h1>
+    <div>
+      <input type="text" name="" id="inputValue" />
+      <button onclick="calc()">확인</button>
+      <h3>결과값이 출력됩니다.</h3>
+    </div>
+    <div id="appendPoint"></div>
+
+    <script>
+      let input = {};
+
+      input.getInputValue = function () {
+        let inputValue = prompt(`식을 입력해주세요\n(예시: 4 + 2 * 3) \n(종료 : q)`);
+        return inputValue;
+      };
+
+      let calculator = {};
+
+      calculator.sum = function (a, b) {
+        return a + b;
+      };
+
+      calculator.minus = function (a, b) {
+        return a - b;
+      };
+
+      calculator.multiply = function (a, b) {
+        return a * b;
+      };
+
+      calculator.divide = function (a, b) {
+        return a / b;
+      };
+
+      calculator.calculate = function (expressions) {
+        let a = parseInt(expressions[0]);
+        for (let i = 2; i < expressions.length; i += 2) {
+          let operator = expressions[i - 1];
+          let b = parseInt(expressions[i]);
+          switch (operator) {
+            case '+':
+              a = this.sum(a, b);
+              break;
+            case '-':
+              a = this.minus(a, b);
+              break;
+            case '*':
+              a = this.multiply(a, b);
+              break;
+            case '/':
+              a = this.divide(a, b);
+              break;
+
+            default:
+              console.log('올바른 식을 입력해주세요!');
+              document.write(`올바른 식을 입력해주세요!`);
+              break;
+          }
+        }
+        return a;
+      };
+
+      let output = {};
+
+      output.printResult = function (inputValue, result) {
+        let appendPoint = document.getElementById('appendPoint');
+        let resultDiv = document.createElement('div');
+        resultDiv.innerText = `${inputValue} = ${result}`;
+        appendPoint.appendChild(resultDiv);
+      };
+
+      output.renderResult = function (innerText) {};
+
+      function calc() {
+        let inputValue = document.getElementById('inputValue').value;
+        let expressions = inputValue.split(' ');
+        let result = calculator.calculate(expressions);
+
+        output.printResult(inputValue, result);
+      }
+    </script>
+  </body>
+</html>
