@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>HELLO</h1>
+    <div id="puzzle"></div>
+    <div id="control-Buttons" style="margin-top: 0.5rem"></div>
+    <div id="result-Buttons" style="margin-top: 0.5rem"></div>
+    <script>
+      let printPuzzle = function (str) {
+        let getDiv = document.getElementById('puzzle');
+
+        for (let i = 0; i < str.length; i++) {
+          let createButton = document.createElement('button');
+          createButton.innerText = str[i];
+          getDiv.appendChild(createButton);
+        }
+      };
+
+      let printControlButton = function () {
+        let strs = ['뒤집기', '밀어내기'];
+        let getDiv = document.getElementById('control-Buttons');
+
+        for (let i = 0; i < strs.length; i++) {
+          let createButton = document.createElement('button');
+          createButton.innerText = strs[i];
+          getDiv.appendChild(createButton);
+        }
+      };
+
+      let printResultButton = function () {
+        let strs = ['일치합니다'];
+        let getDiv = document.getElementById('result-Buttons');
+        let createButton = document.createElement('button');
+        createButton.innerText = strs[0];
+        getDiv.appendChild(createButton);
+      };
+
+      let shuffle = function () {
+        console.log('뒤집기');
+      };
+
+      let push = function () {
+        console.log('밀어내기');
+      };
+
+      function main() {
+        let str = 'HELLO';
+        printPuzzle(str);
+        printControlButton();
+        printResultButton();
+      }
+
+      main();
+    </script>
+  </body>
+</html>
