@@ -1,6 +1,15 @@
-let word1 = document.getElementById('word1').innerText;
+let words = 'hello,way,mode,news,idea,dirt,client,nation,editor'.split(',');
+console.log(words);
 
 game = {};
+game.choice = function () {
+  let idx = Math.floor(Math.random() * words.length);
+  return words[idx];
+};
+let word = game.choice();
+document.getElementById('word1').innerText = word;
+let word1 = word;
+
 game.word = word1.split('');
 game.btns = [];
 
@@ -30,10 +39,3 @@ let leftShift = function (event) {
   game.word.push(char);
   game.copyBtnText();
 };
-
-console.log(game.btns);
-console.log(game.btns[0].innerText);
-console.log(game.btns[1].innerText);
-console.log(game.btns[2].innerText);
-console.log(game.btns[3].innerText);
-console.log(game.btns[4].innerText);
